@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=plano-rewritten
+Exec=plano-rewritten
+Icon=com.github.diegoivanme.plano
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

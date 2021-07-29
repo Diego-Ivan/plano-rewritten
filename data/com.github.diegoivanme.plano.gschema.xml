@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="plano-rewritten">
+	<schema id="com.github.diegoivanme.plano" path="/com/github/diegoivanme/plano/">
+	</schema>
+</schemalist>

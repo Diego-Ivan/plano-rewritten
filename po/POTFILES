@@ -1,0 +1,7 @@
+data/com.github.diegoivanme.plano.desktop.in
+data/com.github.diegoivanme.plano.appdata.xml.in
+data/com.github.diegoivanme.plano.gschema.xml
+src/window.ui
+src/main.vala
+src/window.vala
+

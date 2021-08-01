@@ -2,6 +2,8 @@ plano_rewritten_sources = [
   'main.vala',
   'window.vala',
   'Application.vala',
+  'Plane.vala',
+  'Entry.vala',
 ]
 
 plano_rewritten_deps = [

@@ -22,30 +22,17 @@
 
 namespace PlanoRewritten {
     public class CartesianPlane : Object {
-        private double[] coords1 = new double[2];
-        private double[] coords2 = new double[2];
+        public double x1 { set; get; }
+        public double x2 { set; get; }
+        public double y1 { set; get; }
+        public double y2 { set; get; }
+
         private double rise;
         private double run;
 
-        public void set_x1 (double value) {
-            coords1[0] = value;
-        }
-
-        public void set_y1 (double value) {
-            coords1[1] = value;
-        }
-
-        public void set_x2 (double value) {
-            coords2[0] = value;
-        }
-
-        public void set_y2 (double value) {
-            coords2[1] = value;
-        }
-
         public double get_slope () {
-            run = coords1[0] + coords2[0];
-            rise = coords1[1] + coords2[1];
+            run = x2 - x1;
+            rise = y2 - y1;
             double slope = rise/run;
             return slope;
         }

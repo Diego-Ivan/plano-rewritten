@@ -62,22 +62,22 @@ namespace PlanoRewritten {
 		bool try_set_entry_values_to_plane () {
 			bool output = true;
 			if (entryX1.try_parse_content ())
-				plane.set_x1 (entryX1.get_value ());
+				plane.x1 = entryX1.get_value ();
 			else
 				output = false;
 
 			if (entryX2.try_parse_content ())
-				plane.set_x2 (entryX2.get_value ());
+				plane.x2 = entryX2.get_value ();
 			else
 				output = false;
 
 			if (entryY1.try_parse_content ())
-				plane.set_y1 (entryY1.get_value ());
+				plane.y1 = entryY1.get_value ();
 			else
 				output = false;
 
 			if (entryY2.try_parse_content ())
-				plane.set_y2 (entryY2.get_value ());
+				plane.y2 = entryY2.get_value ();
 			else
 				output = false;
 

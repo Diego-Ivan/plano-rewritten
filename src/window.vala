@@ -42,9 +42,7 @@ namespace PlanoRewritten {
 
 		[GtkCallback]
 		void btn_calculate_clicked () {
-			remove_error_classes ();
-
-			if (set_entry_values_to_plane ()) {
+			if (try_set_entry_values_to_plane ()) {
 				resultSlope.set_value (plane.get_slope ());
 				resultMidpoint.set_text (plane.get_midpoint ());
 			}
@@ -61,46 +59,27 @@ namespace PlanoRewritten {
 			resultMidpoint.clear ();
 		}
 
-		void remove_error_classes () {
-			entryX1.remove_error_class ();
-			entryX2.remove_error_class ();
-			entryY1.remove_error_class ();
-			entryY2.remove_error_class ();
-		}
-
-		bool set_entry_values_to_plane () {
+		bool try_set_entry_values_to_plane () {
 			bool output = true;
-			if (entryX1.can_content_be_parsed ()) {
+			if (entryX1.try_parse_content ())
 				plane.set_x1 (entryX1.get_value ());
-			}
-			else {
-				entryX1.set_error_class ();
+			else
 				output = false;
-			}
 
-			if (entryX2.can_content_be_parsed ()) {
+			if (entryX2.try_parse_content ())
 				plane.set_x2 (entryX2.get_value ());
-			}
-			else {
-				entryX2.set_error_class ();
+			else
 				output = false;
-			}
 
-			if (entryY1.can_content_be_parsed ()) {
+			if (entryY1.try_parse_content ())
 				plane.set_y1 (entryY1.get_value ());
-			}
-			else {
-				entryY1.set_error_class ();
+			else
 				output = false;
-			}
 
-			if (entryY2.can_content_be_parsed ()) {
+			if (entryY2.try_parse_content ())
 				plane.set_y2 (entryY2.get_value ());
-			}
-			else {
-				entryY2.set_error_class ();
+			else
 				output = false;
-			}
 
 			return output;
 		}

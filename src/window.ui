@@ -230,7 +230,7 @@
                             <property name="can-focus">True</property>
                             <property name="editable">False</property>
                             <property name="caps-lock-warning">False</property>
-                            <property name="placeholder-text" translatable="yes">Slope</property>
+                            <property name="placeholder-text" translatable="yes">Midpoint</property>
                             <property name="input-purpose">digits</property>
                             <style>
                               <class name="read-only"/>

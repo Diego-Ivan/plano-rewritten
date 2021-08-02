@@ -27,8 +27,8 @@ namespace PlanoRewritten {
         public double y1 { set; get; }
         public double y2 { set; get; }
 
-        private double rise;
-        private double run;
+        private double rise { set; get; }
+        private double run { set; get; }
 
         public double get_slope () {
             run = x2 - x1;

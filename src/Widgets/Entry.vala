@@ -47,12 +47,12 @@ namespace PlanoRewritten {
         }
 
         private void set_error_class () {
-            get_style_context ().add_class (Gtk.STYLE_CLASS_ERROR);
+            get_style_context ().add_class ("error");
             debug ("Added error class");
         }
 
         public void remove_error_class () {
-            get_style_context ().remove_class (Gtk.STYLE_CLASS_ERROR);
+            get_style_context ().remove_class ("error");
             debug ("Error class removed");
         }
     }

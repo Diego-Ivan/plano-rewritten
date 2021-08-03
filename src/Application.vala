@@ -29,7 +29,7 @@ namespace PlanoRewritten {
 
         protected override void startup () {
             base.startup ();
-            Hdy.init ();
+            Adw.init ();
         }
 
         protected override void activate () {

@@ -18,7 +18,7 @@
 
 namespace PlanoRewritten {
 	[GtkTemplate (ui = "/com/github/diegoivanme/plano/window.ui")]
-	public class Window : Hdy.ApplicationWindow {
+	public class Window : Adw.ApplicationWindow {
 		CartesianPlane plane = new CartesianPlane ();
 		[GtkChild] unowned Entry entryX1;
 		[GtkChild] unowned Entry entryY1;
@@ -33,8 +33,8 @@ namespace PlanoRewritten {
 			Gtk.CssProvider provider = new Gtk.CssProvider ();
 			provider.load_from_resource ("/com/github/diegoivanme/plano/style.css");
 
-			Gtk.StyleContext.add_provider_for_screen (
-				get_screen (),
+			Gtk.StyleContext.add_provider_for_display (
+				Gdk.Display.get_default (),
 				provider,
 				Gtk.STYLE_PROVIDER_PRIORITY_USER
 			);

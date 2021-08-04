@@ -59,6 +59,11 @@ namespace PlanoRewritten {
 			resultMidpoint.clear ();
 		}
 
+		[GtkCallback]
+		void btn_switch_theme_clicked () {
+		    message ("Hola Mundo");
+		}
+
 		bool try_set_entry_values_to_plane () {
 			bool output = true;
 			if (entryX1.try_parse_content ())

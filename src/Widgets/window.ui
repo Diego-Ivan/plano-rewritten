@@ -29,9 +29,12 @@
                 </attributes>
               </object>
             </child>
-            <style>
-              <class name="flat"/>
-            </style>
+            <child type="end">
+              <object class="GtkButton">
+                <property name="icon-name">weather-clear-symbolic</property>
+                <signal name="clicked" handler="btn_switch_theme_clicked" swapped="no"/>
+              </object>
+            </child>
           </object>
         </child>
         <child>
@@ -106,6 +109,7 @@
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="placeholder-text" translatable="yes">X2</property>
+                            <property name="input-purpose">digits</property>
                           </object>
                         </child>
                         <child>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="plano-rewritten">
 	<schema id="com.github.diegoivanme.plano" path="/com/github/diegoivanme/plano/">
+		<key name="my-key" type="s">
+		  <default>'Hello World'</default>
+		</key>
 	</schema>
 </schemalist>

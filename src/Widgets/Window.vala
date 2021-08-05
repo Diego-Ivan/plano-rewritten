@@ -26,28 +26,36 @@ namespace PlanoRewritten {
 		[GtkChild] unowned Entry entryY2;
 		[GtkChild] unowned Entry resultSlope;
 		[GtkChild] unowned Entry resultMidpoint;
+		Gtk.Settings gtk_settings = Gtk.Settings.get_default ();
 
 		public Window (Gtk.Application app) {
 			Object (application: app);
 
 			Gtk.CssProvider provider = new Gtk.CssProvider ();
 			provider.load_from_resource ("/com/github/diegoivanme/plano/style.css");
+			set_default_size (
+				Application.settings.get_int ("window-width"),
+				Application.settings.get_int ("window-height")
+			);
 
 			Gtk.StyleContext.add_provider_for_display (
 				Gdk.Display.get_default (),
 				provider,
 				Gtk.STYLE_PROVIDER_PRIORITY_USER
 			);
-		}
 
-		construct {
-			var gtk_settings = Gtk.Settings.get_default ();
-			gtk_settings.bind_property (
+			Application.settings.bind_property (
 				"dark-theme",
 				gtk_settings,
 				"gtk-application-prefer-dark-theme",
 				GLib.BindingFlags.SYNC_CREATE
 			);
+			
+			close_request.connect (() => {
+				Application.settings.set_int ("window-height", get_height ());
+				Application.settings.set_int ("window-width", get_width ());
+				return false;
+			});
 		}
 
 		[GtkCallback]
@@ -71,7 +79,10 @@ namespace PlanoRewritten {
 
 		[GtkCallback]
 		void btn_switch_theme_clicked () {
-		    message (Application.settings.dark_theme.to_string ());
+		    Application.settings.set_boolean (
+				"dark-theme", 
+				!Application.settings.get_boolean ("dark-theme")
+			);
 		}
 
 		bool try_set_entry_values_to_plane () {

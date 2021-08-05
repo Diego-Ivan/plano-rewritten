@@ -8,3 +8,11 @@ Plano is a graphical Application to calculate Cartesian Plane related operations
 
 Plano is in a process to be ported from GTK3 and Handy to GTK4 and Adwaita. Currently code is available in this branch
 port-gtk4-adw
+
+See my project history over here. In legacy you can find commits in spanish and some messages expressing my learning course, it was kinda funny to read them tho.
+
+| Repository/Branch | Version |
+| ----------------- | ------- |
+| [plano-legacy](https://github.com/DiegoIvanME/plano-legacy) | Legacy (GJS, GTK3) |
+| main | Current Version (GTK3, Handy) |
+| port-gtk4-adw | Final Version (GTK4, Adwaita) |

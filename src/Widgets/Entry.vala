@@ -19,6 +19,7 @@
  */
 
 namespace PlanoRewritten {
+    [GtkTemplate (ui = "/com/github/diegoivanme/plano/entry.ui")]
     public class Entry : Gtk.Entry {
         private double value;
         public double get_value () { return value; }
@@ -26,10 +27,10 @@ namespace PlanoRewritten {
         public bool try_parse_content () {
             if (get_text () == "" || !double.try_parse (get_text())) {
                 debug ("Entry content was empty or non-valid value, returning false");
-                set_error_class ();
+                add_css_class ("error");
                 return false;
             }
-            remove_error_class ();
+            remove_css_class ("error");
             value = double.parse (get_text ());
             return true;
         }
@@ -39,21 +40,10 @@ namespace PlanoRewritten {
             set_text (value.to_string ());
         }
 
-        
         public void clear () {
-            remove_error_class ();
+            remove_css_class ("error");
             set_text ("");
             debug ("Content set to ''");
-        }
-
-        private void set_error_class () {
-            get_style_context ().add_class ("error");
-            debug ("Added error class");
-        }
-
-        public void remove_error_class () {
-            get_style_context ().remove_class ("error");
-            debug ("Error class removed");
         }
     }
 }

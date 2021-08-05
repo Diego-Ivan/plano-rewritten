@@ -1,4 +1,7 @@
-# Plano
+<div align="center">
+  <image src="data/icons/hicolor/scalable/apps/com.github.diegoivanme.plano.svg">
+    <h1>Plano</h1>
+</div>
 
 Plano, was my first Gtk Application, it was ugly and had obsufacted code. I do not promise this is perfect, but it is a great step forward on the first Plano, coded in GJS without the appropiate OO widgets.
 

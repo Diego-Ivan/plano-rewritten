@@ -3,6 +3,8 @@
   <requires lib="gtk+" version="3.24"/>
   <requires lib="libhandy" version="0.0"/>
   <template class="PlanoRewrittenWindow" parent="AdwApplicationWindow">
+    <property name="default-height">370</property>
+    <property name="default-width">400</property>
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
@@ -41,37 +43,30 @@
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkBox">
-                <property name="visible">True</property>
                 <property name="valign">center</property>
                 <property name="vexpand">True</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">15</property>
                 <child>
                   <object class="GtkBox">
-                    <property name="visible">True</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">9</property>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
                         <property name="label" translatable="yes">First Coordinates</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkBox">
-                        <property name="visible">True</property>
                         <property name="halign">center</property>
                         <property name="spacing">19</property>
                         <child>
                           <object class="PlanoRewrittenEntry" id="entryX1">
-                            <property name="visible">True</property>
                             <property name="placeholder-text" translatable="yes">X1</property>
                           </object>
                         </child>
                         <child>
                           <object class="PlanoRewrittenEntry" id="entryY1">
-                            <property name="editable">True</property>
-                            <property name="visible">True</property>
                             <property name="placeholder-text" translatable="yes">Y1</property>
                           </object>
                         </child>
@@ -81,30 +76,24 @@
                 </child>
                 <child>
                   <object class="GtkBox">
-                    <property name="visible">True</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">9</property>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
                         <property name="label" translatable="yes">Second Coordinates</property>
                       </object>
                     </child>
                     <child>
                       <object class="GtkBox">
-                        <property name="visible">True</property>
                         <property name="halign">center</property>
                         <property name="spacing">19</property>
                         <child>
                           <object class="PlanoRewrittenEntry" id="entryX2">
-                            <property name="visible">True</property>
                             <property name="placeholder-text" translatable="yes">X2</property>
-                            <property name="input-purpose">digits</property>
                           </object>
                         </child>
                         <child>
                           <object class="PlanoRewrittenEntry" id="entryY2">
-                            <property name="visible">True</property>
                             <property name="placeholder-text" translatable="yes">Y2</property>
                           </object>
                         </child>
@@ -114,11 +103,9 @@
                 </child>
                 <child>
                   <object class="GtkBox">
-                    <property name="visible">True</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
                         <property name="label" translatable="yes">Results</property>
                       </object>
                     </child>
@@ -150,6 +137,7 @@
                           <object class="PlanoRewrittenEntry" id="resultSlope">
                             <property name="placeholder-text" translatable="yes">Slope</property>
                             <property name="editable">False</property>
+                            <property name="can-target">False</property>
                             <property name="can-focus">False</property>
                             <layout>
                               <property name="column">0</property>
@@ -160,6 +148,7 @@
                         <child>
                           <object class="PlanoRewrittenEntry" id="resultMidpoint">
                             <property name="placeholder-text" translatable="yes">Midpoint</property>
+                            <property name="can-target">False</property>
                             <property name="editable">False</property>
                             <property name="can-focus">False</property>
                             <layout>
@@ -175,7 +164,6 @@
                 <child>
                   <object class="GtkButton">
                     <property name="label" translatable="yes">Calculate</property>
-                    <property name="visible">True</property>
                     <property name="receives-default">True</property>
                     <property name="halign">center</property>
                     <signal name="clicked" handler="btn_calculate_clicked" swapped="no"/>

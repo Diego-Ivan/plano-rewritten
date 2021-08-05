@@ -150,6 +150,7 @@
                           <object class="PlanoRewrittenEntry" id="resultSlope">
                             <property name="placeholder-text" translatable="yes">Slope</property>
                             <property name="editable">False</property>
+                            <property name="can-focus">False</property>
                             <layout>
                               <property name="column">0</property>
                               <property name="row">1</property>
@@ -160,6 +161,7 @@
                           <object class="PlanoRewrittenEntry" id="resultMidpoint">
                             <property name="placeholder-text" translatable="yes">Midpoint</property>
                             <property name="editable">False</property>
+                            <property name="can-focus">False</property>
                             <layout>
                               <property name="column">1</property>
                               <property name="row">1</property>

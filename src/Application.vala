@@ -20,6 +20,7 @@
 
 namespace PlanoRewritten {
     public class Application : Gtk.Application {
+        public static Settings settings;
         public Application () {
             Object (
                 application_id: "com.github.diegoivanme.plano",
@@ -29,6 +30,7 @@ namespace PlanoRewritten {
 
         protected override void startup () {
             base.startup ();
+            settings = new Settings ();
             Adw.init ();
         }
 

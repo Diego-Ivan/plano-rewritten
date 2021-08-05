@@ -40,6 +40,16 @@ namespace PlanoRewritten {
 			);
 		}
 
+		construct {
+			var gtk_settings = Gtk.Settings.get_default ();
+			gtk_settings.bind_property (
+				"dark-theme",
+				gtk_settings,
+				"gtk-application-prefer-dark-theme",
+				GLib.BindingFlags.SYNC_CREATE
+			);
+		}
+
 		[GtkCallback]
 		void btn_calculate_clicked () {
 			if (try_set_entry_values_to_plane ()) {
@@ -61,7 +71,7 @@ namespace PlanoRewritten {
 
 		[GtkCallback]
 		void btn_switch_theme_clicked () {
-		    message ("Hola Mundo");
+		    message (Application.settings.dark_theme.to_string ());
 		}
 
 		bool try_set_entry_values_to_plane () {

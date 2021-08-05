@@ -3,5 +3,6 @@
   <gresource prefix="/com/github/diegoivanme/plano">
     <file>window.ui</file>
     <file>style.css</file>
+    <file>entry.ui</file>
   </gresource>
 </gresources>

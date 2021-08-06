@@ -17,6 +17,6 @@
  */
 
 int main (string[] args) {
-	var app = new PlanoRewritten.Application ();
+	var app = new Plano.Application ();
 	return app.run (args);
 }

@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=plano-rewritten
-Exec=plano-rewritten
+Name=plano
+Exec=plano
 Icon=com.github.diegoivanme.plano
 Terminal=false
 Type=Application

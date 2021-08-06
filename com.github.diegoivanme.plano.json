@@ -3,7 +3,7 @@
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
-    "command" : "plano-rewritten",
+    "command" : "plano",
     "finish-args" : [
         "--share=network",
         "--share=ipc",
@@ -66,7 +66,7 @@
         },
 
         {
-            "name" : "plano-rewritten",
+            "name" : "plano",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [

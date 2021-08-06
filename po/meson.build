@@ -1,1 +1,1 @@
-i18n.gettext('plano-rewritten', preset: 'glib')
+i18n.gettext('plano', preset: 'glib')

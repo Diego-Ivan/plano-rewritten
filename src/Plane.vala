@@ -20,7 +20,7 @@
 
 
 
-namespace PlanoRewritten {
+namespace Plano {
     public class CartesianPlane : Object {
         public double x1 { set; get; }
         public double x2 { set; get; }

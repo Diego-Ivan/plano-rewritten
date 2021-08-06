@@ -1,4 +1,4 @@
-public class PlanoRewritten.Settings : GLib.Settings {
+public class Plano.Settings : GLib.Settings {
     public bool dark_theme { get; set; }
     public int window_width { get; set; }
     public int window_height { get; set; }

@@ -18,9 +18,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-namespace PlanoRewritten {
+namespace Plano {
+    public static Settings settings;
     public class Application : Gtk.Application {
-        public static Settings settings;
+        public static Window window;
         public Application () {
             Object (
                 application_id: "com.github.diegoivanme.plano",
@@ -36,9 +37,15 @@ namespace PlanoRewritten {
 
         protected override void activate () {
             base.startup ();
-            var window = new Window (this);
+            window = new Window (this);
             add_window (window);
             window.present ();
+        }
+
+        protected override void shutdown () {
+            settings.set_int ("window-height", window.get_height ());
+            settings.set_int ("window-width", window.get_width ());
+            base.shutdown ();
         }
     }
 }

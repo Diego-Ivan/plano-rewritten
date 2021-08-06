@@ -79,11 +79,8 @@ namespace Plano {
 		}
 
 		[GtkCallback]
-		void btn_switch_theme_clicked () {
-		    settings.set_boolean (
-				"dark-theme", 
-				!settings.get_boolean ("dark-theme")
-			);
+		void btn_preferences_clicked () {
+			Preferences.open ();
 		}
 
 		bool try_set_entry_values_to_plane () {

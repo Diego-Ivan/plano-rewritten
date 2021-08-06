@@ -18,19 +18,16 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-namespace PlanoRewritten {
+namespace Plano {
     [GtkTemplate (ui = "/com/github/diegoivanme/plano/entry.ui")]
     public class Entry : Gtk.Entry {
         private double value;
-        public double get_value () { return value; }
+        public double get_value () { return double.parse (text); }
 
         public bool try_parse_content () {
-            if (get_text () == "" || !double.try_parse (get_text())) {
-                debug ("Entry content was empty or non-valid value, returning false");
-                add_css_class ("error");
+            if (get_text () == "" || !double.try_parse (get_text())) 
                 return false;
-            }
-            remove_css_class ("error");
+            
             value = double.parse (get_text ());
             return true;
         }
@@ -44,6 +41,14 @@ namespace PlanoRewritten {
             remove_css_class ("error");
             set_text ("");
             debug ("Content set to ''");
+        }
+
+        [GtkCallback]
+        void on_content_changed () {
+            if (!double.try_parse (text))
+                add_css_class ("error");
+            else
+                remove_css_class ("error");
         }
     }
 }

@@ -41,11 +41,5 @@ namespace Plano {
             add_window (window);
             window.present ();
         }
-
-        protected override void shutdown () {
-            settings.set_int ("window-height", window.get_height ());
-            settings.set_int ("window-width", window.get_width ());
-            base.shutdown ();
-        }
     }
 }

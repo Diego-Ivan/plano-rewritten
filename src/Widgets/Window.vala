@@ -51,6 +51,12 @@ namespace Plano {
 				"gtk-application-prefer-dark-theme",
 				GLib.BindingFlags.SYNC_CREATE
 			);
+
+			close_request.connect (() => {
+				settings.set_int ("window-height", get_height ());
+            	settings.set_int ("window-width", get_width ());
+				return false;
+			});
 		}
 
 		[GtkCallback]

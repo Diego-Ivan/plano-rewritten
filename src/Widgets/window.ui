@@ -2,7 +2,7 @@
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <requires lib="libhandy" version="0.0"/>
-  <template class="PlanoRewrittenWindow" parent="AdwApplicationWindow">
+  <template class="PlanoWindow" parent="AdwApplicationWindow">
     <property name="default-height">370</property>
     <property name="default-width">400</property>
     <child>
@@ -61,12 +61,12 @@
                         <property name="halign">center</property>
                         <property name="spacing">19</property>
                         <child>
-                          <object class="PlanoRewrittenEntry" id="entryX1">
+                          <object class="PlanoEntry" id="entryX1">
                             <property name="placeholder-text" translatable="yes">X1</property>
                           </object>
                         </child>
                         <child>
-                          <object class="PlanoRewrittenEntry" id="entryY1">
+                          <object class="PlanoEntry" id="entryY1">
                             <property name="placeholder-text" translatable="yes">Y1</property>
                           </object>
                         </child>
@@ -88,12 +88,12 @@
                         <property name="halign">center</property>
                         <property name="spacing">19</property>
                         <child>
-                          <object class="PlanoRewrittenEntry" id="entryX2">
+                          <object class="PlanoEntry" id="entryX2">
                             <property name="placeholder-text" translatable="yes">X2</property>
                           </object>
                         </child>
                         <child>
-                          <object class="PlanoRewrittenEntry" id="entryY2">
+                          <object class="PlanoEntry" id="entryY2">
                             <property name="placeholder-text" translatable="yes">Y2</property>
                           </object>
                         </child>
@@ -134,7 +134,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="PlanoRewrittenEntry" id="resultSlope">
+                          <object class="PlanoEntry" id="resultSlope">
                             <property name="placeholder-text" translatable="yes">Slope</property>
                             <property name="editable">False</property>
                             <property name="can-target">False</property>
@@ -146,7 +146,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="PlanoRewrittenEntry" id="resultMidpoint">
+                          <object class="PlanoEntry" id="resultMidpoint">
                             <property name="placeholder-text" translatable="yes">Midpoint</property>
                             <property name="can-target">False</property>
                             <property name="editable">False</property>

@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace PlanoRewritten {
+namespace Plano {
 	[GtkTemplate (ui = "/com/github/diegoivanme/plano/window.ui")]
 	public class Window : Adw.ApplicationWindow {
 		CartesianPlane plane = new CartesianPlane ();
@@ -33,9 +33,10 @@ namespace PlanoRewritten {
 
 			Gtk.CssProvider provider = new Gtk.CssProvider ();
 			provider.load_from_resource ("/com/github/diegoivanme/plano/style.css");
+
 			set_default_size (
-				Application.settings.get_int ("window-width"),
-				Application.settings.get_int ("window-height")
+				settings.get_int ("window-width"),
+				settings.get_int ("window-height")
 			);
 
 			Gtk.StyleContext.add_provider_for_display (
@@ -44,18 +45,12 @@ namespace PlanoRewritten {
 				Gtk.STYLE_PROVIDER_PRIORITY_USER
 			);
 
-			Application.settings.bind_property (
+			settings.bind_property (
 				"dark-theme",
 				gtk_settings,
 				"gtk-application-prefer-dark-theme",
 				GLib.BindingFlags.SYNC_CREATE
 			);
-			
-			close_request.connect (() => {
-				Application.settings.set_int ("window-height", get_height ());
-				Application.settings.set_int ("window-width", get_width ());
-				return false;
-			});
 		}
 
 		[GtkCallback]
@@ -79,9 +74,9 @@ namespace PlanoRewritten {
 
 		[GtkCallback]
 		void btn_switch_theme_clicked () {
-		    Application.settings.set_boolean (
+		    settings.set_boolean (
 				"dark-theme", 
-				!Application.settings.get_boolean ("dark-theme")
+				!settings.get_boolean ("dark-theme")
 			);
 		}
 

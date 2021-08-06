@@ -5,6 +5,7 @@ plano_sources += [
   'Settings.vala',
   'Widgets/Window.vala',
   'Widgets/Entry.vala',
+  'Widgets/Preferences.vala',
 ]
 
 plano_deps = [

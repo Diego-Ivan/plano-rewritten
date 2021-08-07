@@ -22,6 +22,13 @@ namespace Plano {
     public static Settings settings;
     public class Application : Gtk.Application {
         public static Window window;
+        public string[] ACCEL_PREFERENCES = {"F1"};
+        public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q"};
+
+        public const GLib.ActionEntry[] app_entries = {
+            { "preferences", show_preferences_window },
+            { "quit", quit_app }
+        };
         public Application () {
             Object (
                 application_id: "com.github.diegoivanme.plano",
@@ -33,6 +40,9 @@ namespace Plano {
             base.startup ();
             settings = new Settings ();
             Adw.init ();
+            set_accels_for_action ("app.preferences", ACCEL_PREFERENCES);
+            set_accels_for_action ("app.quit", CLOSE_APP_ACCEL);
+            add_action_entries (app_entries, this);
         }
 
         protected override void activate () {
@@ -40,6 +50,15 @@ namespace Plano {
             window = new Window (this);
             add_window (window);
             window.present ();
+        }
+
+        private void show_preferences_window () {
+            Preferences.open ();
+        }
+
+        private void quit_app () {
+            window.close_request ();
+            quit ();
         }
     }
 }

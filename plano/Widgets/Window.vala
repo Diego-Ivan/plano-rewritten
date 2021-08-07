@@ -26,6 +26,7 @@ namespace Plano {
 		[GtkChild] unowned Entry entryY2;
 		[GtkChild] unowned Entry resultSlope;
 		[GtkChild] unowned Entry resultMidpoint;
+
 		Gtk.Settings gtk_settings = Gtk.Settings.get_default ();
 
 		public Window (Gtk.Application app) {
@@ -76,11 +77,6 @@ namespace Plano {
 			entryY2.clear ();
 			resultSlope.clear ();
 			resultMidpoint.clear ();
-		}
-
-		[GtkCallback]
-		void btn_preferences_clicked () {
-			Preferences.open ();
 		}
 
 		bool try_set_entry_values_to_plane () {

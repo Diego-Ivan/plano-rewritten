@@ -2,6 +2,15 @@
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <requires lib="libhandy" version="0.0"/>
+  <menu id="action_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.preferences</attribute>
+        <attribute name="target">direct</attribute>
+      </item>
+    </section>
+  </menu>
   <template class="PlanoWindow" parent="AdwApplicationWindow">
     <property name="default-height">370</property>
     <property name="default-width">400</property>
@@ -31,9 +40,9 @@
               </object>
             </child>
             <child type="end">
-              <object class="GtkButton">
+              <object class="GtkMenuButton" id="menu_button">
                 <property name="icon-name">open-menu-symbolic</property>
-                <signal name="clicked" handler="btn_preferences_clicked" swapped="no"/>
+                <property name="menu-model">action_menu</property>
               </object>
             </child>
           </object>

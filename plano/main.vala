@@ -16,7 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-int main (string[] args) {
-	var app = new Plano.Application ();
-	return app.run (args);
+namespace Plano {
+	public static Application app;
+
+	public static int main (string [] args) {
+		app = new Application ();
+		return app.run (args);
+	}
 }

@@ -15,3 +15,28 @@ See my project history over here. In legacy you can find commits in spanish and 
 | ----------------- | ------- |
 | [plano-legacy](https://github.com/DiegoIvanME/plano-legacy) | Legacy (GJS, GTK3) |
 | main | Current Version (GTK4, Adwaita) |
+
+## Building and Running
+
+Meson (therefore Ninja), GTK4 development files and Vala compilers are required.
+
+### Fedora 
+
+```
+sudo dnf install vala vala-devel gtk4-devel
+```
+
+Libadwaita will be built along with the project
+
+
+### GNOME-Builder
+
+Clone the project with `git clone https://github.com/diegoivanme/plano-rewritten` and run it.
+
+### Meson
+
+```
+meson build
+cd build
+ninja install
+```

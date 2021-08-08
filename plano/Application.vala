@@ -22,6 +22,7 @@ namespace Plano {
     public static Settings settings;
     public class Application : Gtk.Application {
         public static Window window;
+        // TODO: About dialog and Gettext domain
         public static Gtk.AboutDialog about_dialog;
 
         public string[] ACCEL_PREFERENCES = {"F1"};

@@ -22,6 +22,8 @@ namespace Plano {
     public static Settings settings;
     public class Application : Gtk.Application {
         public static Window window;
+        public static Gtk.AboutDialog about_dialog;
+
         public string[] ACCEL_PREFERENCES = {"F1"};
         public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q"};
 

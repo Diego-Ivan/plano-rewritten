@@ -25,7 +25,7 @@ namespace Plano {
 		[GtkChild] unowned Entry entryX2;
 		[GtkChild] unowned Entry entryY2;
 		[GtkChild] unowned Entry resultSlope;
-		[GtkChild] unowned Entry resultMidpoint;
+		[GtkChild] unowned Gtk.Entry resultMidpoint;
 
 		Gtk.Settings gtk_settings = Gtk.Settings.get_default ();
 
@@ -52,12 +52,6 @@ namespace Plano {
 				"gtk-application-prefer-dark-theme",
 				GLib.BindingFlags.SYNC_CREATE
 			);
-
-			close_request.connect (() => {
-				settings.set_int ("window-height", get_height ());
-            	settings.set_int ("window-width", get_width ());
-				return false;
-			});
 		}
 
 		[GtkCallback]
@@ -76,7 +70,14 @@ namespace Plano {
 			entryX2.clear ();
 			entryY2.clear ();
 			resultSlope.clear ();
-			resultMidpoint.clear ();
+			resultMidpoint.set_text ("");
+		}
+
+		[GtkCallback]
+		bool on_close_request () {
+			settings.set_int ("window-height", get_height ());
+            settings.set_int ("window-width", get_width ());				
+			return false;
 		}
 
 		bool try_set_entry_values_to_plane () {

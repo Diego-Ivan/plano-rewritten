@@ -7,13 +7,13 @@
       <item>
         <attribute name="label" translatable="yes">_Preferences</attribute>
         <attribute name="action">app.preferences</attribute>
-        <attribute name="target">direct</attribute>
       </item>
     </section>
   </menu>
   <template class="PlanoWindow" parent="AdwApplicationWindow">
     <property name="default-height">370</property>
     <property name="default-width">400</property>
+    <signal name="close-request" handler="on_close_request" swapped="no"/>
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
@@ -155,7 +155,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="PlanoEntry" id="resultMidpoint">
+                          <object class="GtkEntry" id="resultMidpoint">
                             <property name="placeholder-text" translatable="yes">Midpoint</property>
                             <property name="can-target">False</property>
                             <property name="editable">False</property>

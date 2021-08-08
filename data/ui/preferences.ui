@@ -38,11 +38,10 @@
                 <property name="title" translatable="yes">Decimals</property>
                 <property name="subtitle" translatable="yes">The number of decimals result entries may show</property>
                 <child>
-                  <object class="GtkSpinButton">
+                  <object class="GtkSpinButton" id="decimalsSpinButton">
                     <property name="can_focus">0</property>
                     <property name="valign">center</property>
                     <property name="adjustment">decimals_adjustment</property>
-                    <property name="value">3</property>
                   </object>
                 </child>
               </object>

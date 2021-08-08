@@ -10,5 +10,8 @@
 	  <key name="window-width" type="i">
 	    <default>400</default>
 	  </key>
+	  <key name="decimals" type="i">
+      <default>3</default>
+	  </key>
 	</schema>
 </schemalist>

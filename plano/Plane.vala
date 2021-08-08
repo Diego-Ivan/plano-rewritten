@@ -31,9 +31,11 @@ namespace Plano {
         private double run { set; get; }
 
         public double get_slope () {
+            // TODO: Add support for decimal limits
+            double slope;
             run = x2 - x1;
             rise = y2 - y1;
-            double slope = rise/run;
+            slope = rise/run;
             return slope;
         }
 

@@ -20,7 +20,7 @@
 
 namespace Plano {
     public static Settings settings;
-    public class Application : Gtk.Application {
+    public class Application : Adw.Application {
         public static Window window;
         // TODO: About dialog and Gettext domain
         public static Gtk.AboutDialog about_dialog;
@@ -37,6 +37,7 @@ namespace Plano {
                 application_id: "com.github.diegoivanme.plano",
                 flags: ApplicationFlags.FLAGS_NONE
             );
+            set_resource_base_path ("/com/github/diegoivanme/plano");
         }
 
         protected override void startup () {

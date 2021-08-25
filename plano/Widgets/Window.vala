@@ -32,18 +32,9 @@ namespace Plano {
 		public Window (Gtk.Application app) {
 			Object (application: app);
 
-			Gtk.CssProvider provider = new Gtk.CssProvider ();
-			provider.load_from_resource ("/com/github/diegoivanme/plano/style.css");
-
 			set_default_size (
 				settings.get_int ("window-width"),
 				settings.get_int ("window-height")
-			);
-
-			Gtk.StyleContext.add_provider_for_display (
-				Gdk.Display.get_default (),
-				provider,
-				Gtk.STYLE_PROVIDER_PRIORITY_USER
 			);
 
 			settings.bind_property (

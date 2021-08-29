@@ -35,7 +35,8 @@
             <child>
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">Decimals</property>
-                <property name="subtitle" translatable="yes">The number of decimals result entries may show</property>
+                <property name="subtitle" translatable="yes">The number of decimals result entries must show</property>
+                <property name="icon_name">accessories-calculator-symbolic</property>
                 <child>
                   <object class="GtkSpinButton" id="decimalsSpinButton">
                     <property name="can_focus">0</property>

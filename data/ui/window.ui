@@ -22,7 +22,7 @@
             <property name="show-title-buttons">True</property>
             <child type="start">
               <object class="GtkButton">
-                <property name="label" translatable="yes">Clear</property>
+                <property name="icon-name">user-trash-symbolic</property>
                 <signal name="clicked" handler="btn_clear_entries_clicked" swapped="no"/>
                 <style>
                   <class name="destructive-action"/>

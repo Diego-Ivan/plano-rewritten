@@ -1,3 +1,6 @@
+@define-color accent_color @green_4;
+@define-color accent_bg_color @green_4;
+
 .main_box {
     padding: 15px 24px;
 }

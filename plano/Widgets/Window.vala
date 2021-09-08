@@ -48,7 +48,7 @@ namespace Plano {
 		[GtkCallback]
 		void btn_calculate_clicked () {
 			if (try_set_entry_values_to_plane ()) {
-				resultSlope.set_value (plane.get_slope ());
+				resultSlope.set_text (plane.get_slope ());
 				resultMidpoint.set_text (plane.get_midpoint ());
 			}
 		}

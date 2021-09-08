@@ -30,13 +30,37 @@ namespace Plano {
         private double rise { set; get; }
         private double run { set; get; }
 
-        public double get_slope () {
-            // TODO: Add support for decimal limits
+        public string get_slope () {
+            int decimals = settings.get_int ("decimals");
+            message (decimals.to_string ());
             double slope;
             run = x2 - x1;
             rise = y2 - y1;
             slope = rise/run;
-            return slope;
+
+            string temp_value = "" + slope.to_string ();
+            string string_value = "";
+
+            int counter = -1;
+
+            for (int i = 0; i < temp_value.length; ++i) {
+                // checking the condition
+                if (counter > decimals) {
+                    break;
+                }
+                else if (temp_value.get_char (i) == '.') {
+                    counter = 1;
+                }
+                else if (counter >= 1) {
+                    counter++;
+                }
+
+                // converting the number into string
+                string_value += temp_value.get_char (i).to_string ();
+                message (string_value);
+            }
+                message (string_value);
+                return string_value;
         }
 
         public string get_midpoint () {

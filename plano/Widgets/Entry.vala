@@ -32,11 +32,6 @@ namespace Plano {
             return true;
         }
 
-        public void set_value (double _value) {
-            value = _value;
-            set_text (value.to_string ());
-        }
-
         public void clear () {
             remove_css_class ("error");
             set_text ("");

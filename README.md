@@ -1,5 +1,5 @@
 <div align="center">
-  <image src="data/icons/hicolor/scalable/apps/com.github.diegoivanme.plano.svg">
+  <image src="data/Plano.png" width="10%">
     <h1>Plano</h1>
 </div>
 

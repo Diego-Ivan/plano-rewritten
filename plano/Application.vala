@@ -25,12 +25,13 @@ namespace Plano {
         // TODO: About dialog and Gettext domain
         public static Gtk.AboutDialog about_dialog;
 
-        public string[] ACCEL_PREFERENCES = {"F1"};
+        public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
         public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q"};
 
         public const GLib.ActionEntry[] app_entries = {
             { "preferences", show_preferences_window },
-            { "quit", quit_app }
+            { "quit", quit_app },
+            { "about", show_about_dialog }
         };
         public Application () {
             Object (
@@ -38,20 +39,24 @@ namespace Plano {
                 flags: ApplicationFlags.FLAGS_NONE
             );
             set_resource_base_path ("/com/github/diegoivanme/plano");
+
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
+            Intl.textdomain (Config.GETTEXT_PACKAGE);
         }
 
         protected override void startup () {
             base.startup ();
             settings = new Settings ();
-            Adw.init ();
             set_accels_for_action ("app.preferences", ACCEL_PREFERENCES);
             set_accels_for_action ("app.quit", CLOSE_APP_ACCEL);
             add_action_entries (app_entries, this);
         }
 
         protected override void activate () {
-            base.startup ();
-            window = new Window (this);
+            if (window == null) {
+                window = new Window (this);
+            }
             add_window (window);
             window.present ();
         }
@@ -63,6 +68,30 @@ namespace Plano {
         private void quit_app () {
             window.close_request ();
             quit ();
+        }
+
+        public void show_about_dialog () {
+            const string COPYRIGHT = "Copyright \xc2\xa9 2021 Diego Iván";
+
+            const string? AUTHORS[] = {
+                "Diego Iván",
+                null
+            };
+
+            var program_name = Config.NAME_PREFIX + _("Plano");
+            Gtk.show_about_dialog (window,
+                                   "program-name", program_name,
+                                   "logo-icon-name", Config.APP_ID,
+                                   "version", Config.VERSION,
+                                   "comments", _("A Cartesian Plane Calculator"),
+                                   "copyright", COPYRIGHT,
+                                   "authors", AUTHORS,
+                                   "artists", null,
+                                   "license-type", Gtk.License.GPL_3_0,
+                                   "wrap-license", false,
+                                   "translator-credits", _("translator-credits"),
+                                   null
+            );
         }
     }
 }

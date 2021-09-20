@@ -4,13 +4,20 @@
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
   <name>Plano</name>
-  <summary>A basic calculator for the Cartesian Plane</summary>
+  <summary>Calculate slope and midpoint for a Plane</summary>
 	<description>
 	  <p>
-	    Plano is a graphical Application to calculate Cartesian Plane related operations, (Midpoint and Slope). It coded in
-	    GTK4 and Adwaita, and has support for both light and dark theme from the latest Adwaita version
+	    Plano is a graphical Application to calculate Cartesian Plane related operations, (Midpoint and Slope). It is my first GTK application :D
 	  </p>
 	</description>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
   <url type="homepage">https://github.com/diegoivanme/plano-rewritten</url>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
@@ -41,5 +48,5 @@
     <content_attribute id="money-purchasing">none</content_attribute>
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
-  <update_contact>diegoivan.mae@gmail.com</update_contact>
+  <update_contact>diegoivan.mae@protonmail.com</update_contact>
 </component>

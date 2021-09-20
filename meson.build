@@ -1,5 +1,5 @@
-project('plano', ['c', 'vala'],
-          version: '2.5',
+project('com.github.diegoivanme.plano', ['c', 'vala'],
+          version: '3.0',
     meson_version: '>= 0.50.0',
   default_options: [ 'warning_level=2',
                    ],

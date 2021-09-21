@@ -22,11 +22,10 @@ namespace Plano {
     [GtkTemplate (ui = "/com/github/diegoivanme/plano/entry.ui")]
     public class Entry : Gtk.Entry {
         public double get_value () { return double.parse (text); }
+        public bool is_numeric;
 
         public bool try_parse_content () {
-            if (get_text () == "")
-                return false;
-            return double.try_parse (text);
+            return get_text () == "" ? false : double.try_parse (text);
         }
 
         public void clear () {

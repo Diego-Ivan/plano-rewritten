@@ -22,17 +22,17 @@ namespace Plano {
     public static Settings settings;
     public class Application : Adw.Application {
         public static Window window;
-        // TODO: About dialog and Gettext domain
-        public static Gtk.AboutDialog about_dialog;
 
         public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
         public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q"};
+        public string[] ABOUT_APP_ACCEL = {"F1"};
 
         public const GLib.ActionEntry[] app_entries = {
             { "preferences", show_preferences_window },
             { "quit", quit_app },
             { "about", show_about_dialog }
         };
+
         public Application () {
             Object (
                 application_id: "com.github.diegoivanme.plano",
@@ -50,6 +50,7 @@ namespace Plano {
             settings = new Settings ();
             set_accels_for_action ("app.preferences", ACCEL_PREFERENCES);
             set_accels_for_action ("app.quit", CLOSE_APP_ACCEL);
+            set_accels_for_action ("app.about", ABOUT_APP_ACCEL);
             add_action_entries (app_entries, this);
         }
 

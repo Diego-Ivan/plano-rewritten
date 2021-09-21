@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.diegoivanme.plano\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 11:15-0500\n"
+"POT-Creation-Date: 2021-09-21 11:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,39 +44,39 @@ msgstr ""
 msgid "The number of decimals result entries must show"
 msgstr ""
 
-#: data/ui/window.ui:6
+#: data/ui/window.ui:8
 msgid "_Preferences"
 msgstr ""
 
-#: data/ui/window.ui:10
+#: data/ui/window.ui:12
 msgid "_About Plano"
 msgstr ""
 
-#: data/ui/window.ui:16
+#: data/ui/window.ui:18
 msgid "_Quit"
 msgstr ""
 
-#: data/ui/window.ui:74
+#: data/ui/window.ui:76
 msgid "First Coordinates"
 msgstr ""
 
-#: data/ui/window.ui:105
+#: data/ui/window.ui:103
 msgid "Second Coordinates"
 msgstr ""
 
-#: data/ui/window.ui:135
+#: data/ui/window.ui:129
 msgid "Results"
 msgstr ""
 
-#: data/ui/window.ui:150
+#: data/ui/window.ui:140
 msgid "Slope"
 msgstr ""
 
-#: data/ui/window.ui:162
+#: data/ui/window.ui:149
 msgid "Midpoint"
 msgstr ""
 
-#: data/ui/window.ui:200
+#: data/ui/window.ui:184
 msgid "Calculate"
 msgstr ""
 

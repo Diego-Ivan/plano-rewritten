@@ -1,7 +1,14 @@
 data/com.github.diegoivanme.plano.desktop.in
 data/com.github.diegoivanme.plano.appdata.xml.in
 data/com.github.diegoivanme.plano.gschema.xml
-src/window.ui
-src/main.vala
-src/window.vala
+data/ui/entry.ui
+data/ui/preferences.ui
+data/ui/window.ui
+plano/Widgets/Entry.vala
+plano/Widgets/Preferences.vala
+plano/Widgets/Window.vala
+plano/main.vala
+plano/Application.vala
+plano/Plane.vala
+plano/Settings.vala
 

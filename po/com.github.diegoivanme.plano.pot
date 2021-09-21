@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.diegoivanme.plano package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.diegoivanme.plano\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-21 11:15-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.github.diegoivanme.plano.desktop.in:3
+#: data/com.github.diegoivanme.plano.appdata.xml.in:6 plano/Application.vala:82
+msgid "Plano"
+msgstr ""
+
+#: data/com.github.diegoivanme.plano.appdata.xml.in:7
+msgid "Calculate slope and midpoint for a Plane"
+msgstr ""
+
+#: data/com.github.diegoivanme.plano.appdata.xml.in:9
+msgid ""
+"Plano is a graphical Application to calculate Cartesian Plane related "
+"operations, (Midpoint and Slope). It is my first GTK application :D"
+msgstr ""
+
+#: data/ui/preferences.ui:20
+msgid "Dark theme"
+msgstr ""
+
+#: data/ui/preferences.ui:37
+msgid "Decimals"
+msgstr ""
+
+#: data/ui/preferences.ui:38
+msgid "The number of decimals result entries must show"
+msgstr ""
+
+#: data/ui/window.ui:6
+msgid "_Preferences"
+msgstr ""
+
+#: data/ui/window.ui:10
+msgid "_About Plano"
+msgstr ""
+
+#: data/ui/window.ui:16
+msgid "_Quit"
+msgstr ""
+
+#: data/ui/window.ui:74
+msgid "First Coordinates"
+msgstr ""
+
+#: data/ui/window.ui:105
+msgid "Second Coordinates"
+msgstr ""
+
+#: data/ui/window.ui:135
+msgid "Results"
+msgstr ""
+
+#: data/ui/window.ui:150
+msgid "Slope"
+msgstr ""
+
+#: data/ui/window.ui:162
+msgid "Midpoint"
+msgstr ""
+
+#: data/ui/window.ui:200
+msgid "Calculate"
+msgstr ""
+
+#: plano/Application.vala:87
+msgid "A Cartesian Plane Calculator"
+msgstr ""
+
+#: plano/Application.vala:93
+msgid "translator-credits"
+msgstr ""

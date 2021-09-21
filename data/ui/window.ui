@@ -9,7 +9,7 @@
         <attribute name="action">app.preferences</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">_About</attribute>
+        <attribute name="label" translatable="yes">_About Plano</attribute>
         <attribute name="action">app.about</attribute>
       </item>
     </section>
@@ -36,7 +36,7 @@
             </child>
             <child type="title">
               <object class="GtkLabel">
-                <property name="label" translatable="yes">Plano</property>
+                <property name="label" translatable="no">Plano</property>
                 <property name="ellipsize">end</property>
                 <property name="width-chars">3</property>
                 <attributes>
@@ -76,12 +76,12 @@
                         <property name="spacing">19</property>
                         <child>
                           <object class="PlanoEntry" id="entryX1">
-                            <property name="placeholder-text" translatable="yes">X1</property>
+                            <property name="placeholder-text" translatable="no">X1</property>
                           </object>
                         </child>
                         <child>
                           <object class="PlanoEntry" id="entryY1">
-                            <property name="placeholder-text" translatable="yes">Y1</property>
+                            <property name="placeholder-text" translatable="no">Y1</property>
                           </object>
                         </child>
                       </object>
@@ -103,12 +103,12 @@
                         <property name="spacing">19</property>
                         <child>
                           <object class="PlanoEntry" id="entryX2">
-                            <property name="placeholder-text" translatable="yes">X2</property>
+                            <property name="placeholder-text" translatable="no">X2</property>
                           </object>
                         </child>
                         <child>
                           <object class="PlanoEntry" id="entryY2">
-                            <property name="placeholder-text" translatable="yes">Y2</property>
+                            <property name="placeholder-text" translatable="no">Y2</property>
                           </object>
                         </child>
                       </object>

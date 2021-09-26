@@ -4,6 +4,9 @@
 		<key name="dark-theme" type="b">
 		  <default>false</default>
 		</key>
+	  <key name="use-system-schema" type="b">
+		  <default>false</default>
+		</key>
 	  <key name="window-height" type="i">
 	    <default>370</default>
 	  </key>

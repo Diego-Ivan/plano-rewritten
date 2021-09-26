@@ -7,8 +7,8 @@
     <property name="page_increment">3</property>
   </object>
   <template class="PlanoPreferences" parent="AdwPreferencesWindow">
-    <property name="default-height">324</property>
-    <property name="default-width">360</property>
+    <property name="default-height">358</property>
+    <property name="default-width">396</property>
     <child>
       <object class="AdwPreferencesPage">
         <property name="title">Preferences</property>
@@ -17,12 +17,28 @@
             <property name="title">Appereance</property>
             <child>
               <object class="AdwActionRow">
-                <property name="title" translatable="yes">Dark theme</property>
-                <property name="icon_name">display-brightness-symbolic</property>
+                <property name="title" translatable="yes">Use system default</property>
+                <property name="subtitle" translatable="yes">Whether or not use system default dark/light theme preferences</property>
+                <property name="icon_name">preferences-other-symbolic</property>
                 <child>
-                  <object class="GtkSwitch" id="darkThemeSwitch">
+                  <object class="GtkSwitch" id="switcher_use_default">
                     <property name="can_focus">0</property>
                     <property name="valign">center</property>
+                    <signal name="notify::active" handler="use_default_active_changed_cb" swapped="no"/>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Prefer dark theme for this app</property>
+                <property name="icon_name">weather-clear-symbolic</property>
+                <child>
+                  <object class="GtkSwitch" id="switcher_prefer_dark">
+                    <property name="can_focus">0</property>
+                    <property name="valign">center</property>
+                    <signal name="notify::active" handler="prefer_dark_active_changed_cb" swapped="no"/>
+                    <signal name="notify::sensitive" handler="prefer_dark_sensitive_changed_cb" swapped="no"/>
                   </object>
                 </child>
               </object>
@@ -38,7 +54,7 @@
                 <property name="subtitle" translatable="yes">The number of decimals result entries must show</property>
                 <property name="icon_name">accessories-calculator-symbolic</property>
                 <child>
-                  <object class="GtkSpinButton" id="decimalsSpinButton">
+                  <object class="GtkSpinButton" id="decimals_spin_button">
                     <property name="can_focus">0</property>
                     <property name="valign">center</property>
                     <property name="adjustment">decimals_adjustment</property>

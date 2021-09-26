@@ -26,6 +26,7 @@ namespace Plano {
         public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
         public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q"};
         public string[] ABOUT_APP_ACCEL = {"F1"};
+        public string[] CUSTOM_ACCEL = {"F2"};
 
         public const GLib.ActionEntry[] app_entries = {
             { "preferences", show_preferences_window },
@@ -51,7 +52,17 @@ namespace Plano {
             set_accels_for_action ("app.preferences", ACCEL_PREFERENCES);
             set_accels_for_action ("app.quit", CLOSE_APP_ACCEL);
             set_accels_for_action ("app.about", ABOUT_APP_ACCEL);
+            set_accels_for_action ("win.win_entry", CUSTOM_ACCEL);
             add_action_entries (app_entries, this);
+
+            if (settings.get_boolean ("use-system-schema"))
+                style_manager.set_color_scheme (Adw.ColorScheme.DEFAULT);
+
+            else if (settings.get_boolean ("dark-theme"))
+                style_manager.set_color_scheme (Adw.ColorScheme.FORCE_DARK);
+
+            else
+                style_manager.set_color_scheme (Adw.ColorScheme.FORCE_LIGHT);
         }
 
         protected override void activate () {
@@ -79,7 +90,7 @@ namespace Plano {
                 null
             };
 
-            var program_name = Config.NAME_PREFIX + _("Plano");
+            var program_name = "Plano";
             Gtk.show_about_dialog (window,
                                    "program-name", program_name,
                                    "logo-icon-name", Config.APP_ID,

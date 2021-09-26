@@ -35,6 +35,7 @@
               <object class="GtkButton">
                 <property name="icon-name">user-trash-symbolic</property>
                 <signal name="clicked" handler="btn_clear_entries_clicked" swapped="no"/>
+                <property name="tooltip-text" translatable="yes">Clear all entries</property>
                 <style>
                   <class name="destructive-action"/>
                   <class name="raised"/>
@@ -85,12 +86,12 @@
                         <property name="halign">center</property>
                         <property name="spacing">19</property>
                         <child>
-                          <object class="PlanoEntry" id="entryX1">
+                          <object class="PlanoEntry" id="entry_x1">
                             <property name="placeholder-text" translatable="no">X1</property>
                           </object>
                         </child>
                         <child>
-                          <object class="PlanoEntry" id="entryY1">
+                          <object class="PlanoEntry" id="entry_y1">
                             <property name="placeholder-text" translatable="no">Y1</property>
                           </object>
                         </child>
@@ -115,12 +116,12 @@
                         <property name="halign">center</property>
                         <property name="spacing">19</property>
                         <child>
-                          <object class="PlanoEntry" id="entryX2">
+                          <object class="PlanoEntry" id="entry_x2">
                             <property name="placeholder-text" translatable="no">X2</property>
                           </object>
                         </child>
                         <child>
-                          <object class="PlanoEntry" id="entryY2">
+                          <object class="PlanoEntry" id="entry_y2">
                             <property name="placeholder-text" translatable="no">Y2</property>
                           </object>
                         </child>

@@ -20,10 +20,10 @@ namespace Plano {
 	[GtkTemplate (ui = "/com/github/diegoivanme/plano/window.ui")]
 	public class Window : Adw.ApplicationWindow {
 		CartesianPlane plane = new CartesianPlane ();
-		[GtkChild] unowned Entry entryX1;
-		[GtkChild] unowned Entry entryY1;
-		[GtkChild] unowned Entry entryX2;
-		[GtkChild] unowned Entry entryY2;
+		[GtkChild] unowned Entry entry_x1;
+		[GtkChild] unowned Entry entry_y1;
+		[GtkChild] unowned Entry entry_x2;
+		[GtkChild] unowned Entry entry_y2;
 		[GtkChild] unowned Gtk.Entry resultSlope;
 		[GtkChild] unowned Gtk.Entry resultMidpoint;
 
@@ -47,10 +47,10 @@ namespace Plano {
 		[GtkCallback]
 		void btn_clear_entries_clicked () {
 			debug ("Cleaning entries...");
-			entryX1.clear ();
-			entryY1.clear ();
-			entryX2.clear ();
-			entryY2.clear ();
+			entry_x1.clear ();
+			entry_y1.clear ();
+			entry_x2.clear ();
+			entry_y2.clear ();
 			resultSlope.set_text ("");
 			resultMidpoint.set_text ("");
 		}
@@ -64,23 +64,23 @@ namespace Plano {
 
 		bool try_set_entry_values_to_plane () {
 			bool output = true;
-			if (entryX1.try_parse_content ())
-				plane.x1 = entryX1.get_value ();
+			if (entry_x1.try_parse_content ())
+				plane.x1 = entry_x1.get_value ();
 			else
 				output = false;
 
-			if (entryX2.try_parse_content ())
-				plane.x2 = entryX2.get_value ();
+			if (entry_x2.try_parse_content ())
+				plane.x2 = entry_x2.get_value ();
 			else
 				output = false;
 
-			if (entryY1.try_parse_content ())
-				plane.y1 = entryY1.get_value ();
+			if (entry_y1.try_parse_content ())
+				plane.y1 = entry_y1.get_value ();
 			else
 				output = false;
 
-			if (entryY2.try_parse_content ())
-				plane.y2 = entryY2.get_value ();
+			if (entry_y2.try_parse_content ())
+				plane.y2 = entry_y2.get_value ();
 			else
 				output = false;
 

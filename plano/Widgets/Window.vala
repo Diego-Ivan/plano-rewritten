@@ -27,8 +27,6 @@ namespace Plano {
 		[GtkChild] unowned Gtk.Entry resultSlope;
 		[GtkChild] unowned Gtk.Entry resultMidpoint;
 
-		Gtk.Settings gtk_settings = Gtk.Settings.get_default ();
-
 		public Window (Gtk.Application app) {
 			Object (application: app);
 
@@ -36,14 +34,6 @@ namespace Plano {
 				settings.get_int ("window-width"),
 				settings.get_int ("window-height")
 			);
-
-			settings.bind_property (
-				"dark-theme",
-				gtk_settings,
-				"gtk-application-prefer-dark-theme",
-				GLib.BindingFlags.SYNC_CREATE
-			);
-			add_css_class ("devel");
 		}
 
 		[GtkCallback]

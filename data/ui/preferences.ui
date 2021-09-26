@@ -22,7 +22,6 @@
                 <property name="icon_name">preferences-other-symbolic</property>
                 <child>
                   <object class="GtkSwitch" id="switcher_use_default">
-                    <property name="can_focus">0</property>
                     <property name="valign">center</property>
                     <signal name="notify::active" handler="use_default_active_changed_cb" swapped="no"/>
                   </object>
@@ -35,7 +34,6 @@
                 <property name="icon_name">weather-clear-symbolic</property>
                 <child>
                   <object class="GtkSwitch" id="switcher_prefer_dark">
-                    <property name="can_focus">0</property>
                     <property name="valign">center</property>
                     <signal name="notify::active" handler="prefer_dark_active_changed_cb" swapped="no"/>
                     <signal name="notify::sensitive" handler="prefer_dark_sensitive_changed_cb" swapped="no"/>
@@ -55,7 +53,6 @@
                 <property name="icon_name">accessories-calculator-symbolic</property>
                 <child>
                   <object class="GtkSpinButton" id="decimals_spin_button">
-                    <property name="can_focus">0</property>
                     <property name="valign">center</property>
                     <property name="adjustment">decimals_adjustment</property>
                   </object>

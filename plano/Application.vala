@@ -24,7 +24,7 @@ namespace Plano {
         public static Window window;
 
         public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
-        public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q"};
+        public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q", "<Ctrl>W"};
         public string[] ABOUT_APP_ACCEL = {"F1"};
         public string[] CUSTOM_ACCEL = {"F2"};
 
@@ -58,7 +58,7 @@ namespace Plano {
             if (settings.get_boolean ("use-system-schema"))
                 style_manager.set_color_scheme (Adw.ColorScheme.DEFAULT);
 
-            else if (settings.get_boolean ("dark-theme"))
+            else if (settings.get_boolean ("prefer-dark-theme"))
                 style_manager.set_color_scheme (Adw.ColorScheme.FORCE_DARK);
 
             else

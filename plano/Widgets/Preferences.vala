@@ -16,7 +16,7 @@ namespace Plano {
                 GLib.SettingsBindFlags.DEFAULT
             );
             settings.bind (
-                "dark-theme",
+                "prefer-dark-theme",
                 switcher_prefer_dark,
                 "active",
                 GLib.SettingsBindFlags.DEFAULT

@@ -1,5 +1,5 @@
 public class Plano.Settings : GLib.Settings {
-    public bool dark_theme { get; set; }
+    public bool prefer_dark_theme { get; set; }
     public int decimals { get; set; }
 
     public Settings () {

@@ -26,11 +26,12 @@ namespace Plano {
         public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
         public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q", "<Ctrl>W"};
         public string[] ABOUT_APP_ACCEL = {"F1"};
-        public string[] CUSTOM_ACCEL = {"F2"};
+        public string[] SHOW_SHORTCUTS_ACCEL = {"<Primary>question"};
 
         public const GLib.ActionEntry[] app_entries = {
             { "preferences", show_preferences_window },
             { "quit", quit_app },
+            { "shortcuts", show_shortcuts_window },
             { "about", show_about_dialog }
         };
 
@@ -52,7 +53,7 @@ namespace Plano {
             set_accels_for_action ("app.preferences", ACCEL_PREFERENCES);
             set_accels_for_action ("app.quit", CLOSE_APP_ACCEL);
             set_accels_for_action ("app.about", ABOUT_APP_ACCEL);
-            set_accels_for_action ("win.win_entry", CUSTOM_ACCEL);
+            set_accels_for_action ("app.shortcuts", SHOW_SHORTCUTS_ACCEL);
             add_action_entries (app_entries, this);
 
             if (settings.get_boolean ("use-system-schema"))
@@ -71,6 +72,19 @@ namespace Plano {
             }
             add_window (window);
             window.present ();
+        }
+
+        private void show_shortcuts_window () {
+            try {
+                var ui_builder = new Gtk.Builder ();
+                ui_builder.add_from_resource ("/com/github/diegoivanme/plano/shortcuts.ui");
+                var shortcuts_window = ui_builder.get_object ("Shortcuts") as Gtk.ShortcutsWindow;
+
+                shortcuts_window.set_transient_for (window);
+                shortcuts_window.show ();
+            } catch (Error e) {
+                critical ("An error occured while loading shortcuts window: %s", e.message);
+            }
         }
 
         private void show_preferences_window () {

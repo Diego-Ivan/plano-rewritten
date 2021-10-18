@@ -3,6 +3,7 @@ plano_sources += [
   'Application.vala',
   'Plane.vala',
   'Settings.vala',
+  'Utils.vala',
   'Widgets/Window.vala',
   'Widgets/Entry.vala',
   'Widgets/Preferences.vala',

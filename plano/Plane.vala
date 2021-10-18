@@ -33,38 +33,15 @@ namespace Plano {
             run = x2 - x1;
             rise = y2 - y1;
             slope = rise/run;
-            return minify_number (slope);
+            return Utils.minify_number (slope);
         }
 
         public string get_midpoint () {
             string midpoint;
-            midpoint = @"$(minify_number(run/2)), $(minify_number(rise/2))";
+            string midpoint_top = Utils.minify_number (run/2);
+            string midpoint_bottom = Utils.minify_number (rise/2);
+            midpoint = @"$midpoint_top, $midpoint_bottom";
             return midpoint;
-        }
-
-        private string minify_number (double number) {
-            int decimals = settings.get_int ("decimals");
-            string temp_value = "" + number.to_string ();
-            string string_value = "";
-
-            int counter = -1;
-            for (int i = 0; i < temp_value.length; ++i) {
-                // checking the condition
-                if (counter > decimals) {
-                    break;
-                }
-                else if (temp_value.get_char (i) == '.') {
-                    counter = 1;
-                }
-                else if (counter >= 1) {
-                    counter++;
-                }
-
-                // converting the number into string
-                string_value += temp_value.get_char (i).to_string ();
-                message (string_value);
-            }
-            return string_value;
         }
     }
 }

@@ -20,13 +20,13 @@
 
 namespace Plano {
     public class CartesianPlane : Object {
-        public double x1 { set; get; }
-        public double x2 { set; get; }
-        public double y1 { set; get; }
-        public double y2 { set; get; }
+        public double x1 { get; set; }
+        public double x2 { get; set; }
+        public double y1 { get; set; }
+        public double y2 { get; set; }
 
-        private double rise { set; get; }
-        private double run { set; get; }
+        private double rise { get; set; }
+        private double run { get; set; }
 
         public string get_slope () {
             double slope;

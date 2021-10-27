@@ -19,10 +19,14 @@
  */
 
 namespace Plano {
-    [GtkTemplate (ui = "/com/github/diegoivanme/plano/entry.ui")]
     public class Entry : Gtk.Entry {
         public double get_value () { return double.parse (text); }
         public bool is_numeric;
+
+        construct {
+            set_input_purpose (Gtk.InputPurpose.DIGITS);
+            changed.connect (on_content_changed);
+        }
 
         public bool try_parse_content () {
             return get_text () == "" ? false : double.try_parse (text);
@@ -34,7 +38,6 @@ namespace Plano {
             debug ("Content set to ''");
         }
 
-        [GtkCallback]
         void on_content_changed () {
             if (!double.try_parse (text))
                 add_css_class ("error");

@@ -3,7 +3,6 @@
   <gresource prefix="/com/github/diegoivanme/plano">
     <file>window.ui</file>
     <file>style.css</file>
-    <file>entry.ui</file>
     <file>preferences.ui</file>
     <file>shortcuts.ui</file>
   </gresource>

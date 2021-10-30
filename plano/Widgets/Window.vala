@@ -17,15 +17,15 @@
  */
 
 namespace Plano {
-	[GtkTemplate (ui = "/com/github/diegoivanme/plano/window.ui")]
+    [GtkTemplate (ui = "/com/github/diegoivanme/plano/window.ui")]
 	public class Window : Adw.ApplicationWindow {
 		CartesianPlane plane = new CartesianPlane ();
 		[GtkChild] unowned Entry entry_x1;
 		[GtkChild] unowned Entry entry_y1;
 		[GtkChild] unowned Entry entry_x2;
 		[GtkChild] unowned Entry entry_y2;
-		[GtkChild] unowned Gtk.Entry resultSlope;
-		[GtkChild] unowned Gtk.Entry resultMidpoint;
+		[GtkChild] unowned Gtk.Entry result_slope;
+		[GtkChild] unowned Gtk.Entry result_midpoint;
 
 		public Window (Gtk.Application app) {
 			Object (application: app);
@@ -39,26 +39,26 @@ namespace Plano {
 		[GtkCallback]
 		void btn_calculate_clicked () {
 			if (try_set_entry_values_to_plane ()) {
-				resultSlope.set_text (plane.get_slope ());
-				resultMidpoint.set_text (plane.get_midpoint ());
+				result_slope.set_text (plane.get_slope ());
+				result_midpoint.set_text (plane.get_midpoint ());
 			}
 		}
 
 		[GtkCallback]
 		void btn_clear_entries_clicked () {
-			debug ("Cleaning entries...");
+			debug ("Cleaning entries");
 			entry_x1.clear ();
 			entry_y1.clear ();
 			entry_x2.clear ();
 			entry_y2.clear ();
-			resultSlope.set_text ("");
-			resultMidpoint.set_text ("");
+			result_slope.set_text ("");
+			result_midpoint.set_text ("");
 		}
 
 		[GtkCallback]
 		bool on_close_request () {
 			settings.set_int ("window-height", get_height ());
-            settings.set_int ("window-width", get_width ());				
+            settings.set_int ("window-width", get_width ());
 			return false;
 		}
 

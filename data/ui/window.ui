@@ -170,7 +170,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="resultSlope">
+                          <object class="GtkEntry" id="result_slope">
                             <property name="editable">False</property>
                             <property name="can-target">False</property>
                             <property name="can-focus">False</property>
@@ -181,7 +181,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="resultMidpoint">
+                          <object class="GtkEntry" id="result_midpoint">
                             <property name="can-target">False</property>
                             <property name="editable">False</property>
                             <property name="can-focus">False</property>

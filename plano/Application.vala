@@ -23,12 +23,12 @@ namespace Plano {
     public class Application : Adw.Application {
         public static Window window;
 
-        public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
-        public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q", "<Ctrl>W"};
-        public string[] ABOUT_APP_ACCEL = {"F1"};
-        public string[] SHOW_SHORTCUTS_ACCEL = {"<Primary>question"};
+        public const string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
+        public const string[] CLOSE_APP_ACCEL = {"<Ctrl>Q", "<Ctrl>W"};
+        public const string[] ABOUT_APP_ACCEL = {"F1"};
+        public const string[] SHOW_SHORTCUTS_ACCEL = {"<Primary>question"};
 
-        public const GLib.ActionEntry[] app_entries = {
+        public const GLib.ActionEntry[] APP_ENTRIES = {
             { "preferences", show_preferences_window },
             { "quit", quit_app },
             { "shortcuts", show_shortcuts_window },
@@ -54,7 +54,7 @@ namespace Plano {
             set_accels_for_action ("app.quit", CLOSE_APP_ACCEL);
             set_accels_for_action ("app.about", ABOUT_APP_ACCEL);
             set_accels_for_action ("app.shortcuts", SHOW_SHORTCUTS_ACCEL);
-            add_action_entries (app_entries, this);
+            add_action_entries (APP_ENTRIES, this);
 
             if (settings.get_boolean ("use-system-schema"))
                 style_manager.set_color_scheme (Adw.ColorScheme.DEFAULT);

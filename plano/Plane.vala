@@ -32,14 +32,14 @@ namespace Plano {
             double slope;
             run = x2 - x1;
             rise = y2 - y1;
-            slope = rise/run;
+            slope = rise / run;
             return Utils.minify_number (slope);
         }
 
         public string get_midpoint () {
             string midpoint;
-            string midpoint_top = Utils.minify_number (run/2);
-            string midpoint_bottom = Utils.minify_number (rise/2);
+            string midpoint_top = Utils.minify_number (run / 2);
+            string midpoint_bottom = Utils.minify_number (rise / 2);
             midpoint = @"$midpoint_top, $midpoint_bottom";
             return midpoint;
         }

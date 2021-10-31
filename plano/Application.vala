@@ -23,10 +23,10 @@ namespace Plano {
     public class Application : Adw.Application {
         public static Window window;
 
-        public const string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
-        public const string[] CLOSE_APP_ACCEL = {"<Ctrl>Q", "<Ctrl>W"};
-        public const string[] ABOUT_APP_ACCEL = {"F1"};
-        public const string[] SHOW_SHORTCUTS_ACCEL = {"<Primary>question"};
+        public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
+        public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q", "<Ctrl>W"};
+        public string[] ABOUT_APP_ACCEL = {"F1"};
+        public string[] SHOW_SHORTCUTS_ACCEL = {"<Primary>question"};
 
         public const GLib.ActionEntry[] APP_ENTRIES = {
             { "preferences", show_preferences_window },

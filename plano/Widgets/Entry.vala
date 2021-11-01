@@ -20,16 +20,21 @@
 
 namespace Plano {
     public class Entry : Gtk.Entry {
-        public double get_value () { return double.parse (text); }
-        public bool is_numeric;
-
         construct {
             set_input_purpose (Gtk.InputPurpose.DIGITS);
             changed.connect (on_content_changed);
         }
 
-        public bool try_parse_content () {
-            return get_text () == "" ? false : double.try_parse (text);
+        public bool try_parse_text_to_object_property (Object? object, string property) {
+            assert (object is Object);
+
+            if (text == "" || !double.try_parse (text)) {
+                warning ("Text is not a double");
+                return false;
+            }
+
+            object.set_property (property, double.parse (text));
+            return true;
         }
 
         public void clear () {

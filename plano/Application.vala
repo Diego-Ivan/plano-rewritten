@@ -23,10 +23,10 @@ namespace Plano {
     public class Application : Adw.Application {
         public static Window window;
 
-        public string[] ACCEL_PREFERENCES = {"<Ctrl>comma"};
-        public string[] CLOSE_APP_ACCEL = {"<Ctrl>Q", "<Ctrl>W"};
-        public string[] ABOUT_APP_ACCEL = {"F1"};
-        public string[] SHOW_SHORTCUTS_ACCEL = {"<Primary>question"};
+        public string[] accel_preferences = {"<Ctrl>comma"};
+        public string[] close_app_accel = {"<Ctrl>Q", "<Ctrl>W"};
+        public string[] about_app_accel = {"F1"};
+        public string[] show_shortcuts_accel = {"<Primary>question"};
 
         public const GLib.ActionEntry[] APP_ENTRIES = {
             { "preferences", show_preferences_window },
@@ -50,10 +50,10 @@ namespace Plano {
         protected override void startup () {
             base.startup ();
             settings = new Settings ();
-            set_accels_for_action ("app.preferences", ACCEL_PREFERENCES);
-            set_accels_for_action ("app.quit", CLOSE_APP_ACCEL);
-            set_accels_for_action ("app.about", ABOUT_APP_ACCEL);
-            set_accels_for_action ("app.shortcuts", SHOW_SHORTCUTS_ACCEL);
+            set_accels_for_action ("app.preferences", accel_preferences);
+            set_accels_for_action ("app.quit", close_app_accel);
+            set_accels_for_action ("app.about", about_app_accel);
+            set_accels_for_action ("app.shortcuts", show_shortcuts_accel);
             add_action_entries (APP_ENTRIES, this);
 
             if (settings.get_boolean ("use-system-schema"))

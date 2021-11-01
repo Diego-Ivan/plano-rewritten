@@ -19,13 +19,14 @@
 namespace Plano {
     [GtkTemplate (ui = "/com/github/diegoivanme/plano/window.ui")]
 	public class Window : Adw.ApplicationWindow {
-		CartesianPlane plane = new CartesianPlane ();
 		[GtkChild] unowned Entry entry_x1;
 		[GtkChild] unowned Entry entry_y1;
 		[GtkChild] unowned Entry entry_x2;
 		[GtkChild] unowned Entry entry_y2;
 		[GtkChild] unowned Gtk.Entry result_slope;
 		[GtkChild] unowned Gtk.Entry result_midpoint;
+
+		public CartesianPlane plane { get; set; }
 
 		public Window (Gtk.Application app) {
 			Object (application: app);
@@ -34,6 +35,8 @@ namespace Plano {
 				settings.get_int ("window-width"),
 				settings.get_int ("window-height")
 			);
+
+			plane = new CartesianPlane ();
 		}
 
 		[GtkCallback]
@@ -63,26 +66,19 @@ namespace Plano {
 		}
 
 		bool try_set_entry_values_to_plane () {
-			bool output = true;
-			if (entry_x1.try_parse_content ())
-				plane.x1 = entry_x1.get_value ();
-			else
-				output = false;
+			var output = true;
 
-			if (entry_x2.try_parse_content ())
-				plane.x2 = entry_x2.get_value ();
-			else
-				output = false;
+			if (!entry_x1.try_parse_text_to_object_property (plane, "x1"))
+			    output = false;
 
-			if (entry_y1.try_parse_content ())
-				plane.y1 = entry_y1.get_value ();
-			else
-				output = false;
+			if (!entry_y1.try_parse_text_to_object_property (plane, "y1"))
+			    output = false;
 
-			if (entry_y2.try_parse_content ())
-				plane.y2 = entry_y2.get_value ();
-			else
-				output = false;
+	        if (!entry_x2.try_parse_text_to_object_property (plane, "x2"))
+			    output = false;
+
+			if (!entry_y2.try_parse_text_to_object_property (plane, "y2"))
+			    output = false;
 
 			return output;
 		}

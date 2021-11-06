@@ -4,6 +4,7 @@ plano_sources += [
   'Plane.vala',
   'Settings.vala',
   'Utils.vala',
+  'Units.vala',
   'Widgets/Window.vala',
   'Widgets/Entry.vala',
   'Widgets/Preferences.vala',

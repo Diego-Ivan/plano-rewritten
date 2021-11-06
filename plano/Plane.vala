@@ -30,10 +30,14 @@ namespace Plano {
 
         public string get_slope () {
             double slope;
+            var unit = settings.unit;
             run = x2 - x1;
             rise = y2 - y1;
             slope = rise / run;
-            return Utils.minify_number (slope);
+
+            var minified_slope = Utils.minify_number (slope);
+
+            return minified_slope + " " + unit;
         }
 
         public string get_midpoint () {

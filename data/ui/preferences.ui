@@ -14,37 +14,6 @@
         <property name="title">Preferences</property>
         <child>
           <object class="AdwPreferencesGroup">
-            <property name="title">Appereance</property>
-            <child>
-              <object class="AdwActionRow">
-                <property name="title" translatable="yes">Use system default</property>
-                <property name="subtitle" translatable="yes">Whether or not use system default dark/light theme preferences</property>
-                <property name="icon_name">preferences-other-symbolic</property>
-                <child>
-                  <object class="GtkSwitch" id="switcher_use_default">
-                    <property name="valign">center</property>
-                    <signal name="notify::active" handler="use_default_active_changed_cb" swapped="no"/>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child>
-              <object class="AdwActionRow">
-                <property name="title" translatable="yes">Prefer dark theme for this app</property>
-                <property name="icon_name">weather-clear-symbolic</property>
-                <child>
-                  <object class="GtkSwitch" id="switcher_prefer_dark">
-                    <property name="valign">center</property>
-                    <signal name="notify::active" handler="prefer_dark_active_changed_cb" swapped="no"/>
-                    <signal name="notify::sensitive" handler="prefer_dark_sensitive_changed_cb" swapped="no"/>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-        </child>
-        <child>
-          <object class="AdwPreferencesGroup">
             <property name="title">Math</property>
             <child>
               <object class="AdwActionRow">
@@ -57,6 +26,14 @@
                     <property name="adjustment">decimals_adjustment</property>
                   </object>
                 </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwComboRow" id="unit_combo_row">
+                <property name="title" translatable="yes">Units</property>
+                <property name="subtitle" translatable="yes">The unit used for the slope results</property>
+                <property name="icon_name">accessories-calculator-symbolic</property>
+                <signal name="notify::selected-item" handler="on_unit_change_cb" swapped="no"/>
               </object>
             </child>
           </object>

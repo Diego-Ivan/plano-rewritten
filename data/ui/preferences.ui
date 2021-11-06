@@ -19,7 +19,6 @@
               <object class="AdwActionRow">
                 <property name="title" translatable="yes">Decimals</property>
                 <property name="subtitle" translatable="yes">The number of decimals result entries must show</property>
-                <property name="icon_name">accessories-calculator-symbolic</property>
                 <child>
                   <object class="GtkSpinButton" id="decimals_spin_button">
                     <property name="valign">center</property>
@@ -32,7 +31,6 @@
               <object class="AdwComboRow" id="unit_combo_row">
                 <property name="title" translatable="yes">Units</property>
                 <property name="subtitle" translatable="yes">The unit used for the slope results</property>
-                <property name="icon_name">accessories-calculator-symbolic</property>
                 <signal name="notify::selected-item" handler="on_unit_change_cb" swapped="no"/>
               </object>
             </child>

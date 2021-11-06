@@ -19,7 +19,7 @@
  */
 
 namespace Plano {
-    public static Settings settings;
+    public Settings settings;
     public class Application : Adw.Application {
         public static Window window;
 
@@ -50,20 +50,16 @@ namespace Plano {
         protected override void startup () {
             base.startup ();
             settings = new Settings ();
+
             set_accels_for_action ("app.preferences", accel_preferences);
             set_accels_for_action ("app.quit", close_app_accel);
             set_accels_for_action ("app.about", about_app_accel);
             set_accels_for_action ("app.shortcuts", show_shortcuts_accel);
+
             add_action_entries (APP_ENTRIES, this);
+            style_manager.set_color_scheme (Adw.ColorScheme.FORCE_DARK);
 
-            if (settings.get_boolean ("use-system-schema"))
-                style_manager.set_color_scheme (Adw.ColorScheme.DEFAULT);
-
-            else if (settings.get_boolean ("prefer-dark-theme"))
-                style_manager.set_color_scheme (Adw.ColorScheme.FORCE_DARK);
-
-            else
-                style_manager.set_color_scheme (Adw.ColorScheme.FORCE_LIGHT);
+            settings.delay ();
         }
 
         protected override void activate () {
@@ -72,6 +68,12 @@ namespace Plano {
             }
             add_window (window);
             window.present ();
+        }
+
+        protected override void shutdown () {
+            base.shutdown ();
+            settings.apply ();
+            settings.set_string ("unit", settings.unit);
         }
 
         private void show_shortcuts_window () {
